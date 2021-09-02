@@ -6,13 +6,14 @@ $(".search button").click(function(){
 function myFunction(x) {
   x.classList.toggle("change");
 };
+
 $(".toggler-btn").click(function(){
   $(".main-nav").toggleClass("open-nav");
 });
 
 $(document).ready(function($) {
 
-/*-- Menu Sticky --*/
+/* ===== sticky-menu ===== */
     var windows = $(window);
     var sticky = $('.header-sticky')
     windows.on('scroll', function() {
@@ -30,15 +31,16 @@ $(document).ready(function($) {
 
 });
 
-/*-- CounterUp --*/
+/* ===== CounterUp ===== */
 $('.counter').counterUp({
     delay: 10,
     time: 1000,
 });
 
-
+/* ===== mixit up activation ===== */
 var mixer = mixitup(".mix-container");
 
+/* ===== swiper slider ===== */
 var swiper = new Swiper(".mySwiper", {
     autoplay: 5000,
     speed: 800,
@@ -52,7 +54,16 @@ var swiper = new Swiper(".mySwiper", {
       delay: 3000,
     },
   });
+  /* swiper slider deactivate on mouse hover and then activate again */
 
+  $(".swiper-container").hover(function() {
+    (this).swiper.autoplay.stop();
+  }, function() {
+      (this).swiper.autoplay.start();
+  });
+
+
+  /* ===== scroll to top ===== */
   //Get the button
   var mybutton = document.getElementById("myBtn");
 
